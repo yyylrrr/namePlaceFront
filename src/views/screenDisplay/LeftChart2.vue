@@ -1,24 +1,35 @@
 <template>
   <div class="left-chart-2">
-    <!-- <div class="lc2-header">产业分布</div> -->
     <dv-scroll-board class="lc2-chart" :config="config" />
     <dv-decoration-2 style="height:10px;" />
   </div>
 </template>
 
 <script>
-import { getIndustryType } from '@/api/company.js';
 export default {
   name: 'LeftChart2',
   data () {
     return {
       config: {
-          header: ['产业名称', '营收/万', '税收/万', '数量'],
-          data: [],
+          header: ['类别', '数量/个', '检索次数/次'],
+          data: [
+						['总数','609923','304613'],
+						['水系','12452','45245'],
+						['陆地地形','8424','5788'],
+						['行政区域','5453','5885'],
+						['群众自治组织','75721','45687'],
+						['非行政区域','7575','5746'],
+						['居民点','175863','45253'],
+						['交通运输设施','278','3244'],
+						['水利电力通信设施','725','453'],
+						['纪念地旅游胜地','778','245'],
+						['建筑物','5785','254'],
+						['单位','757','577']
+					],
           index: true,
           // waitTime:5000,
           // carousel:'page',
-          columnWidth: [48,100,95,80],
+          columnWidth: [48,110,95],
           align: ['center'],
           rowNum: 5,
           headerBGC: '#3399CC',
@@ -29,25 +40,8 @@ export default {
     }
   },
   created(){
-      this.getindustryData();
   },
   methods:{
-      getindustryData(){
-         getIndustryType().then(res =>{
-           let arr = [];
-           if(res.length >0){
-              for( let i in res){
-                let industryName = res[i].industryName;
-                let industryRevenue = res[i].industryRevenue;
-                let industryTax = res[i].industryTax;
-                let ccount = res[i].industryCompanyCount;
-                arr.push([industryName,industryRevenue,industryTax,ccount])
-              }
-              this.config.data = arr;
-              this.config = {...this.config};
-           }
-         })
-      }
   }
 }
 </script>
@@ -64,16 +58,6 @@ html, body {
   height: 30%;
   display: flex;
   flex-direction: column;
-
-  // .lc2-header {
-  //   height: 20px;
-  //   line-height: 20px;
-  //   font-size: 16px;
-  //     text-align: center;
-  //     justify-content: center;
-  //   align-items: center;
-  //   margin-top: 10px;
-  // }
   .lc2-chart {
     height: calc(~"100% - 50px");
   }

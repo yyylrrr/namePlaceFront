@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import { GetIndustryRevenueTop ,GetIndustryTaxTop} from '@/api/company.js';
 import echarts from 'echarts'
 require('echarts/theme/macarons') // echarts theme
 import { debounce } from '@/utils'
@@ -31,13 +30,15 @@ export default {
   },
   data () {
     return {
-      seriesData1:[],
-      seriesData2:[],
-      seriesData3:[],
+			seriesData1:[6443,36017,1864,17845,185],
+      seriesData2:[24,1020,55,588,5],
+      seriesData3:[76,2409,188,2188,18],
+      seriesData4:[688,8204,420,4201,42],
+			seriesData5:[5688,24384,1201,11201,120],
     }
   },
    created(){
-     this.getIndustryRevenueTop();
+		 
   },
   mounted() {
     this.initChart();
@@ -69,8 +70,20 @@ export default {
       handler(val) {
         this.setOptions(val);
       },
+    },
+    seriesData3: {
+      deep: true,
+      handler(val) {
+        this.setOptions(val);
+      },
     },  
-     seriesData3: {
+     seriesData4: {
+      deep: true,
+      handler(val) {
+        this.setOptions(val);
+      },
+    },
+     seriesData5: {
       deep: true,
       handler(val) {
         this.setOptions(val);
@@ -81,19 +94,6 @@ export default {
 
 
   methods: {
-    async getIndustryRevenueTop(){
-      for(var i = 3;i <= 18;i++){
-        if(i != 16 && i != 17){
-          await  GetIndustryRevenueTop(i).then(res =>{
-               const RevenueTop = JSON.parse(JSON.stringify(res).replace(/companyname/g, 'name').replace(/revenue/g, 'value').replace(/有限/g, '').replace(/公司/g, '').replace(/湖北省/g, '').replace(/湖北/g, '').replace(/责任/g, '').replace(/管理/g, '').replace(/（）/g, ''));
-               this.seriesData1.push(RevenueTop[0] ? RevenueTop[0] : {})
-               this.seriesData2.push(RevenueTop[1] ? RevenueTop[1] : {})
-               this.seriesData3.push(RevenueTop[2] ? RevenueTop[2] : {})
-            })
-        }
-      }
-       
-    },
     setOptions() {
       var option = {
           toolbox: {
@@ -123,17 +123,16 @@ export default {
           containLabel: true
         },
           legend: {
-              data:['第1','第2','第3'],
+						top:"5%",
+              data:['总数','省级','市级','县级','乡镇'],
               textStyle:{
                  color:'auto'
               },
           },
-          calculable : true,
           xAxis : [
               {
                   type : 'category',
-                  data : ['制造业','电燃气水','建筑业','运输仓储','计算机信息', '批发零售', '住宿餐饮', '金融业', '房地产业', '租赁商务业', "科研地勘",
-                "水利公共管理", "服务业", "文娱体育业"],
+                  data : ['界线条数（条）','界线总长度（千米）','界桩数（个）','边界点（个）','三角点（个）'],
                   axisTick: { alignWithLabel: true},
                   axisLabel:{ interval:0 }
               }
@@ -143,66 +142,41 @@ export default {
                   type : 'value'
               }
           ],
+					grid : {
+						left:"6%",
+						right:"3%",
+						bottom:"8%"
+					},
           series : [
-              {
-                  name:'第1',
-                  type:'bar',
-                  label: {
-                    show: true,
-                    position: 'insideBottom',
-                    distance: 15,
-                    align: 'left',
-                    verticalAlign: 'middle',
-                    rotate: 90,
-                    fontSize: 12,
-                    textStyle: {
-                        color: '#FFFFFF'
-                    },
-                      formatter:function(params){
-                      return params.name;
-                      },
-                   },
+							{
+                  name:'总数',
+                  type:'line',
                   data:this.seriesData1,
+									symbol:"circle"
               },
               {
-                  name:'第2',
-                  type:'bar',
-                  label: {
-                    show: true,
-                    position: 'insideBottom',
-                    distance: 15,
-                    align: 'left',
-                    verticalAlign: 'middle',
-                    rotate: 90,
-                    fontSize: 12,
-                    textStyle: {
-                        color: '#FFFFFF'
-                    },
-                      formatter:function(params){
-                      return params.name;
-                      },
-                   },
+                  name:'省级',
+                  type:'line',
                   data:this.seriesData2,
+									symbol:"circle"
               },
               {
-                  name:'第3',
-                  type:'bar',
-                  label: {
-                    show: true,
-                    position: 'insideBottom',
-                    distance: 15,
-                    align: 'left',
-                    verticalAlign: 'middle',
-                    rotate: 90,
-                    fontSize: 12,
-                    textStyle: {
-                        color: '#FFFFFF'
-                    },
-                      formatter:function(params){
-                      return params.name;
-                      },
-                   },
+                  name:'市级',
+                  type:'line',
                   data:this.seriesData3,
+									symbol:"circle"
+              },
+              {
+                  name:'县级',
+                  type:'line',
+                  data:this.seriesData4,
+									symbol:"circle"
+              },
+              {
+                  name:'乡镇',
+                  type:'line',
+                  data:this.seriesData5,
+									symbol:"circle"
               },
           ]
       };               
@@ -222,42 +196,5 @@ html, body {
   height: 100%;
   padding: 0px;
   margin: 0px;
-}
-.charts {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
-
-  .bc-chart-item {
-    width: 25%;
-    height: 100%;
-    padding-top: 20px;
-    box-sizing: border-box;
-  }
-
-  .bcci-header {
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 20px;
-  }
-
-  .dv-active-ring-chart {
-    height: calc(~"100% - 80px");
-  }
-
-  .label-tag {
-    height: 30px;
-  }
-
-  .active-ring-name {
-    font-size: 18px !important;
-  }
-
-  .decoration-1, .decoration-2, .decoration-3 {
-    display: absolute;
-    left: 0%;
-  }
 }
 </style>

@@ -366,4 +366,14 @@ export function SaveImgPath(row) {
   })
 }
 
+export function GetBoundaryStake(kjsjbsm){
+	return request({
+    url: '/Rooms/GetBoundaryStake',
+    method: 'get',
+		params: {
+      kjsjbsm
+    }
+  })
+}
+
 /* ****** */

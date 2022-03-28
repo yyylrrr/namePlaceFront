@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.27184827954571,30.424119522709535]},"properties":{"标识码":"c6d8bbf2-0847-4cab-9adf-1298649ac582","图上名称":"黄家湖","类别代码":"12200","使用时间":"现今地名"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.28149110611689,30.422439443041107]},"properties":{"标识码":"371a7dc4-b8f7-400a-a165-6a90c17f4114","图上名称":"油渣湖","类别代码":"12200","使用时间":"现今地名"}}
+]}

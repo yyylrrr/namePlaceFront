@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.34631388886558,30.090711111099854]},"properties":{"标识码":"55b1155d-62cc-4c7d-ab86-e2bae1115fda","图上名称":"保福路","类别代码":"","使用时间":""}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.39513333331206,30.394177777767425]},"properties":{"标识码":"33dfff1e-854d-4f2c-bb25-a124e75c32b0","图上名称":"藏龙二桥","类别代码":"","使用时间":""}}
+]}

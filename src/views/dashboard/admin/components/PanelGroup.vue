@@ -6,105 +6,84 @@
     <el-col
       :xs="12"
       :sm="12"
-      :lg="5"
+      :lg="6"
       class="card-panel-col"
     >
       <div
         class="card-panel"
-        @click="changeRouter('party-building')"
+        @click="changeRouter('placename-management')"
       >
         <div class="card-panel-icon-wrapper icon-money">
           <svg-icon
-            icon-class="party-building"
+            icon-class="map"
             class-name="card-panel-icon"
           />
         </div>
         <div class="card-panel-description">
-          基层党建
+          地名地图
         </div>
       </div>
     </el-col>
     <el-col
       :xs="12"
       :sm="12"
-      :lg="5"
+      :lg="6"
       class="card-panel-col"
     >
       <div
         class="card-panel"
-        @click="changeRouter('city-management')"
+        @click="changeRouter('boundary-management')"
       >
         <div class="card-panel-icon-wrapper icon-message">
           <svg-icon
-            icon-class="city"
+            icon-class="map"
             class-name="card-panel-icon"
           />
         </div>
         <div class="card-panel-description">
-          城市管理
+          界线地图
         </div>
       </div>
     </el-col>
     <el-col
       :xs="12"
       :sm="12"
-      :lg="4"
+      :lg="6"
       class="card-panel-col"
     >
       <div
         class="card-panel"
-        @click="changeRouter('public-service')"
-      >
-        <div class="card-panel-icon-wrapper icon-people">
-          <svg-icon
-            icon-class="public-service"
-            class-name="card-panel-icon"
-          />
-        </div>
-        <div class="card-panel-description">
-          公共服务
-        </div>
-      </div>
-    </el-col>
-    <el-col
-      :xs="12"
-      :sm="12"
-      :lg="5"
-      class="card-panel-col"
-    >
-      <div
-        class="card-panel"
-        @click="changeRouter('economic-development')"
+        @click="changeRouter('boundary-stake-management')"
       >
         <div class="card-panel-icon-wrapper icon-money">
           <svg-icon
-            icon-class="money"
+            icon-class="map"
             class-name="card-panel-icon"
           />
         </div>
         <div class="card-panel-description">
-          经济发展
+          界桩地图
         </div>
       </div>
     </el-col>
     <el-col
       :xs="12"
       :sm="12"
-      :lg="5"
+      :lg="6"
       class="card-panel-col"
     >
       <div
         class="card-panel"
-        @click="changeRouter('governance')"
+        @click="changeRouter('boundary-sign')"
       >
         <div class="card-panel-icon-wrapper icon-message">
           <svg-icon
-            icon-class="safety"
+            icon-class="map"
             class-name="card-panel-icon"
           />
         </div>
         <div class="card-panel-description">
-          综治维稳
+          边界标志物地图
         </div>
       </div>
     </el-col>

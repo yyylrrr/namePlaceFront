@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.04630686815439,30.230178490200142]},"properties":{"标识码":"92305ed4-077c-4678-8647-8db5bdc71101","图上名称":"","类别代码":"","使用时间":""}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.03943269360516,30.21317262515957]},"properties":{"标识码":"e2b6aa8a-3a7c-4979-b5b1-b25528adbf4f","图上名称":"","类别代码":"","使用时间":""}}
+]}

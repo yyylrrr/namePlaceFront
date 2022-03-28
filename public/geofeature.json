@@ -1,0 +1,78 @@
+﻿[
+  {
+    "id": 1,
+    "label": "地名",
+    "children": [
+       {
+        "id": 100,
+        "label": "点状地名",
+        "url": "/geojson/placename/点状地名.json"
+      },
+      {
+        "id": 101,
+        "label": "线状地名",
+        "url": "/geojson/placename/线状地名.json"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "label": "界线",
+    "children": [
+      {
+        "id": 200,
+        "label": "市级界线",
+        "url": "/geojson/boundary/市级界线.json"
+      },
+      {
+        "id": 201,
+        "label": "县级界线",
+        "url": "/geojson/boundary/县级界线.json"  
+      },
+      {
+        "id": 202,
+        "label": "乡级界线",
+        "url": "/geojson/boundary/乡级界线.json"
+      },
+      {
+        "id": 203,
+        "label": "村级管理线",
+        "url": "/geojson/boundary/村级管理线.json"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "label": "界桩",
+    "children": [
+      {
+        "id": 300,
+        "label": "县级界桩",
+        "url": "/geojson/boundaryStake/县级界桩.json"
+      },      {
+        "id": 301,
+        "label": "乡级界桩",
+        "url": "/geojson/boundaryStake/乡级界桩.json"
+      },      {
+        "id": 302,
+        "label": "界桩",
+        "url": "/geojson/boundaryStake/界桩.json"
+      }
+    ]
+   },
+   {
+     "id": 4,
+     "label": "边界标志物",
+     "children": [
+       {
+         "id": 400,
+         "label": "边界点",
+         "url": "/geojson/boundarySign/边界点.json"
+       },{
+         "id": 401,
+         "label": "三交点",
+         "url": "/geojson/boundarySign/三交点.json"
+       }
+     ]
+    }
+]

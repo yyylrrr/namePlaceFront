@@ -1,0 +1,4 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.40611135793603,30.058388658942263]},"properties":{"标识码":"172382a7-dea2-4fcd-a619-0b60bc9b9a8b","界线代码":"420115013018","界桩编号":"42011501301801"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[114.32754695069599,30.275882523554912]},"properties":{"标识码":"990318c4-af6f-4874-a812-575d719d3e7d","界线代码":"420115001003","界桩编号":"42011500100301"}}
+]}

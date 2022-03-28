@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '徐家棚智慧街道3D一张图',
+  title: '智慧区划地名管理系统',
 
   /**
    * @type {boolean} true | false

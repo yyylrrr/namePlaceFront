@@ -1,9 +1,8 @@
 <template>
-    		 <div :class="className" :style="{height:height,width:width}" />
+	<div :class="className" :style="{height:height,width:width}" />
 </template>
 
 <script>
-import { getTaxRound } from '@/api/company.js';
 import echarts from 'echarts'
 require('echarts/theme/macarons') // echarts theme
 import { debounce } from '@/utils'
@@ -16,23 +15,20 @@ export default {
     },
     width: {
       type: String,
-      default: '400px'
+      default: '440px'
     },
     height: {
       type: String,
-      default: '330px'
-    },
+      default: '350px'
+    }
   },
   data() {
     return {
       chart: null,
-      taxRoundData:[],
-      xTax:['0-30', '30-50', '50-100', '100-300', '300-500', '500-1000', '1000以上'],
     }
   },
   //updated mounted
   created(){
-     this.getTaxRoundData();
   },
   mounted() {
     this.initChart();
@@ -43,69 +39,58 @@ export default {
     }, 100)
     window.addEventListener('resize', this.__resizeHandler)
   },
-  beforeDestroy() {
-    if (!this.chart) {
-      return
-    }
-    window.removeEventListener('resize', this.__resizeHandler)
-    this.chart.dispose()
-    this.chart = null
-  },
 
   watch: {
-     taxRoundData: {
-      deep: true,
-      handler(val) {
-        this.setOptions(val);
-      },
-    },
+
   },
-
-
-
-  methods: {
-    getTaxRoundData(){
-        getTaxRound().then(res =>{       
-					 Object.values(res[0]).map( val =>{
-             this.taxRoundData.push(val);
-					 })			 		      
-        });
-    },
+	
+	methods: {
     setOptions() {
       var option =  {
-				title: {
-					text: '徐家棚税收分布图',
-					left: 'center'
-				},
-				tooltip: {
-					trigger: 'item'
-				},
-				color : ['#91cc75', '#fac858', '#73c0de', 
-				'#3ba272', '#fc8452', '#9a60b4', '#ea7ccc'],
-				legend: {
-					orient: 'horizontal',
-					top:'22px',
-					textStyle:{
-						color:"#ffffff"
-					}
-				},
-        series: [{
-          type: 'pie',
-					radius: '65%',
-          data: [
-						{ name: this.xTax[0], value: this.taxRoundData[0]},
-						{ name: this.xTax[1], value: this.taxRoundData[1]},
-						{ name: this.xTax[2], value: this.taxRoundData[2]},
-						{ name: this.xTax[3], value: this.taxRoundData[3]},
-						{ name: this.xTax[4], value: this.taxRoundData[4]},
-						{ name: this.xTax[5], value: this.taxRoundData[5]},
-						{ name: this.xTax[6], value: this.taxRoundData[6]},
-					],
-					label:{
-						show:false
-					},
-        },
-        ],
+  title: {
+     text: '地名接口调用与地名请求次数',
+     left: 'center',   
+     top: '10px',
+     textStyle: {
+        color: 'white'
+     }
+},
+series: [{
+        type: "bar",
+        data: [25434, 3010, 82000, 42000],
+        itemStyle: {
+            //定义柱子不同颜色
+            normal: {
+                color: function (params) {
+                    var colorList = [
+                      '#67C23A', '#B5C334', '#ffa41b', '#E87C25', '#27727B',
+                      '#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD',
+                      '#D7504B', '#C6E579', '#F4E001', '#F0805A', '#26C0C0'
+                    ];
+                    return colorList[params.dataIndex]
+                },
+                //显示柱子上方数据
+                label: {
+                  show: true,
+                }
+            }
+        }
+}],
+tooltip: {
+   trigger: 'axis', 
+    // formatter: '{a} <br/>{b} : {c} ({d}%)'
+    formatter: '{c}',  //折线图、柱状（条形）图、K线图 : {a}（系列名称），{b}（类目值），{c}（数值）, {d}（无）
+    axisPointer: {
+      type: 'shadow', //line:直线指示器 || shadow:阴影指示器  || none 无指示器 || cross 十字准星指示器
+    }
+ },
+   xAxis: {
+    type: 'category',
+    data: ['累计调用', '近一月调用', '累计请求', '近一月请求']
+  },
+  yAxis: {
+    type: 'value'
+  },
       }
       this.chart.setOption(option);
     },
@@ -116,4 +101,13 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+</style>
 

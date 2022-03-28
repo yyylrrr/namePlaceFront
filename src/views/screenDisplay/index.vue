@@ -3,7 +3,7 @@
     <dv-full-screen-container>
       <div class="main-header">
         <div class="mh-left"><a href=""></a></div>
-        <div class="mh-middle">徐家棚经济楼宇一张图</div>
+        <div class="mh-middle">地名管理数据中心</div>
         <div class="mh-right">
           <dv-border-box-2
             style="width: 120px; height: 50px; line-height: 50px; text-align:center;margin-left:200px;"
@@ -14,52 +14,40 @@
       </div>
 
       <dv-border-box-1 class="main-container">
-        <dv-border-box-3 class="left-chart-container">
 
+        <dv-border-box-3 class="left-chart-container">
           <Left-Chart-1 />
           <Left-Chart-2 />
           <Left-Chart-3 />
-
         </dv-border-box-3>
 
+
         <div class="right-main-container">
-          <div class="rmc-top-container">
-              <digital-flop />
+					<div class="rmc-top-container">
+						<digital-flop />
           </div>
+
           <div class="rmc-center-container">
-            <dv-border-box-3 class="rmctc-left-container">
-
-              <Center-Cmp />
-
-            </dv-border-box-3>
-
-            <div class="rmctc-right-container">
-              <dv-border-box-3 class="rmctc-chart-1">
-
-                <Right-Chart-1 />
-
-              </dv-border-box-3>
-              
-              <dv-border-box-4 class="rmctc-chart-2" :reverse="true" >
-
+						<dv-border-box-7 class="rmctc-left-container">
+							<Center-Cmp />
+						</dv-border-box-7>
+						
+						<div class="rmctc-right-container">
+							<dv-border-box-10 class="rmctc-chart-1">
+								<Right-Chart-1 />
+							</dv-border-box-10>         
+              <dv-border-box-10 class="rmctc-chart-2">
 								<Right-Chart-2 />
-
+							</dv-border-box-10>
+              <dv-border-box-10 class="rmctc-chart-3">
 								<Right-Chart-3 />
-								
-							</dv-border-box-4>
+							</dv-border-box-10>
             </div>
           </div>
 
-          <dv-border-box-4 class="rmc-bottom-container" >
-            <el-tabs class="revenuetop" v-model="activeName1" style="width:100%;height:100%;" @tab-click="handleClick">
-              <el-tab-pane class="revenuetop" label="产业营收前三" name="third">                 
-					        <Bottom-Charts />				        
-              </el-tab-pane>
-              <el-tab-pane class="revenuetop" label="产业税收前三" name="forth">
-					        <Bottom-Charts-1 />
-              </el-tab-pane>
-            </el-tabs>
-          </dv-border-box-4>
+          <dv-border-box-7 class="rmc-bottom-container" >
+						<Bottom-Charts />
+					</dv-border-box-7>
         </div>
       </dv-border-box-1>
 
@@ -81,7 +69,6 @@ import RightChart2 from './RightChart2'
 import RightChart3 from './RightChart3'
 
 import BottomCharts from './BottomCharts'
-import BottomCharts1 from './BottomCharts1'
 
 export default {
   name: 'DataView',
@@ -94,18 +81,14 @@ export default {
     RightChart1,
     RightChart2,
     RightChart3,
-    BottomCharts,
-		BottomCharts1
+    BottomCharts
   },
   data () {
     return {
-			activeName1: 'third'
       }
   },
   methods:{
-        handleClick(){
 
-        }
   }
 }
 </script>
@@ -199,22 +182,17 @@ html, body {
 
   .rmc-bottom-container {
     height: 35%;
+		width: 65%;
   }
 
   .rmctc-chart-1, .rmctc-chart-2 {
     height: 50%;
     box-sizing: border-box;
   }
-  .revenuetop .el-tabs__content{
-    width: 1380px;
-    margin-top: -45px;
-  }
-  .revenuetop .el-tabs{
-    margin-top:-5px;
-    margin-left:-10px;
-  }
-  .revenuetop .el-tabs__item{
-    color:aqua;
+
+  .rmctc-chart-3 {
+    height: 63%;
+    box-sizing: border-box;
   }
 }
 </style>

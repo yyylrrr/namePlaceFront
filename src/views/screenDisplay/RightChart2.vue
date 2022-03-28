@@ -1,9 +1,8 @@
 <template>
-    		 <div :class="className" :style="{height:height,width:width}" />
+	<div :class="className" :style="{height:height,width:width}" />
 </template>
 
 <script>
-import { getRevenueRound } from '@/api/company.js';
 import echarts from 'echarts'
 require('echarts/theme/macarons') // echarts theme
 import { debounce } from '@/utils'
@@ -16,23 +15,20 @@ export default {
     },
     width: {
       type: String,
-      default: '400px'
+      default: '440px'
     },
     height: {
       type: String,
-      default: '330px'
-    },
+      default: '260px'
+    }
   },
   data() {
     return {
       chart: null,
-			revenueRoundData:[],
-      xRevenue:['0-50', '50-100', '100-500', '500-1000','1000-5000', '5000以上'],
     }
   },
   //updated mounted
   created(){
-     this.getRevenueRoundData();
   },
   mounted() {
     this.initChart();
@@ -45,56 +41,39 @@ export default {
   },
 
   watch: {
-    revenueRoundData: {
-      deep: true,
-      handler(val) {
-        this.setOptions(val);
-      },
-    },
+
   },
-
-
-
-  methods: {
-    getRevenueRoundData(){
-        getRevenueRound().then(res =>{         
-					 Object.values(res[0]).map( val =>{
-             this.revenueRoundData.push(val);
-					 })			 		      
-        });
-    },
+	
+	methods: {
     setOptions() {
       var option =  {
 				title: {
-					text: '徐家棚营收分布图',
-					left: 'center'
-				},
-				tooltip: {
-					trigger: 'item',
-				},
-				legend: {
-					orient: 'horizontal',
-					top:'22px',
+					text: '地名更新状况',
+					left: 'center',
 					textStyle:{
-						color:"#ffffff"
+						color: "white"
 					}
 				},
-        series: [{
-          type: 'pie',
-					radius: '65%',
-          data:[
-						{ name: this.xRevenue[0], value:this.revenueRoundData[0]},
-						{ name: this.xRevenue[1], value:this.revenueRoundData[1]},
-						{ name: this.xRevenue[2], value:this.revenueRoundData[2]},
-						{ name: this.xRevenue[3], value:this.revenueRoundData[3]},
-						{ name: this.xRevenue[4], value:this.revenueRoundData[4]},
-						{ name: this.xRevenue[5], value:this.revenueRoundData[5]}
-					],
-					label:{
-						show:false,
+				color: ["#4992ff"],
+				polar: {
+					radius: [10, '70%'],
+					center: ['50%', '55%']
 					},
-        },
-        ],
+				angleAxis: {
+					max: 6.5,
+					startAngle: 90,
+				},
+				radiusAxis: {
+					type: 'category',
+					data: ['累计更新', '县级上报', '市级审批', '省级审批'],
+					show: false
+				},
+				tooltip: {},
+				series: {
+					type: 'bar',
+					data: [6.5, 5.3, 4.2, 4.1],
+					coordinateSystem: 'polar',
+				}
       }
       this.chart.setOption(option);
     },
@@ -105,4 +84,13 @@ export default {
   }
 }
 </script>
+
+<style lang="less">
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+</style>
 

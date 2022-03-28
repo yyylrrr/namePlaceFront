@@ -1,6 +1,6 @@
 <template>
   <div class="left-chart-1">
-    <div class="lc1-details">徐家棚营收前10</div>
+    <div class="lc1-details">地名检索前10名</div>
     <dv-capsule-chart class="lc1-chart" :config="config" />
     <dv-decoration-2 style="height:10px;" />
   </div>
@@ -8,36 +8,64 @@
 
 <script>
 
-import { GetRevenueTop} from '@/api/company.js';
+
 
 export default {
   name: 'LeftChart1',
   data () {
     return {
       config: {
-        data:[],
+        data:[
+    {
+      name: '地名1',
+      value: 2405
+    },
+    {
+      name: '地名2',
+      value: 1968
+    },
+    {
+      name: '地名3',
+      value: 1349
+    },
+    {
+      name: '地名4',
+      value: 1210
+    },
+    {
+      name: '地名5',
+      value: 961
+    },
+    {
+      name: '地名6',
+      value: 934
+    },
+    {
+      name: '地名7',
+      value: 723
+    },
+    {
+      name: '地名8',
+      value: 424
+    },
+    {
+      name: '地名9',
+      value: 233
+    },
+    {
+      name: '地名10',
+      value: 198
+    }
+				],
         colors: ['#00baff', '#3de7c9', '#fff', '#ffc530', '#469f4b'],
-         unit: '亿',
+         unit: '次',
          showValue: true
       },
     }
   },
   created(){
-      this.getRevenueTopByStreet();
   },
   methods:{
-    getRevenueTopByStreet( ){
-        //向后端请求 返回指定楼栋营收前十
-        GetRevenueTop().then(res =>{
-        this.config.data = JSON.parse(JSON.stringify(res).replace(/companyName/g, 'name').replace(/cRevenue/g, 'value').replace(/有限/g, '').replace(/公司/g, '').replace(/湖北省/g, '').replace(/湖北/g, '').replace(/责任/g, '').replace(/管理/g, '').replace(/（）/g, ''));
-        this.config.data.forEach(item =>{
-         item.value = parseFloat((item.value / 10000).toFixed(3));
-        })
-          this.config = {...this.config}
-        }).catch(err => {
-          console.log(err);
-        });
-    }
   }
 }
 </script>
