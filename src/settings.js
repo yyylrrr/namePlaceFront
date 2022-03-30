@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '智慧区划地名管理系统',
+  title: '湖北·国家地名信息库',
 
   /**
    * @type {boolean} true | false

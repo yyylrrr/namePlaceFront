@@ -74,97 +74,12 @@ export const constantRoutes = [
           name: 'screenDisplay',
           component: () => import('@/views/screenDisplay/index'),
           meta: {
-            title: '大屏展示',
+            title: '主页',
             icon: 'dashboard'
           }
 			},
     ]
   },
-
- 
-
-  // {
-  //   path: '/education',
-  //   component: Layout,
-  //   // redirect: '/example/table',
-  //   // name: 'Example',
-  //   // meta: { title: 'Example', icon: 'example' },
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: '教育',
-  //       component: () => import('@/views/education/index'),
-  //       meta: {
-  //         title: '教育',
-  //         icon: 'education'
-  //       }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/public-security',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: '公安',
-  //       component: () => import('@/views/public-security/index'),
-  //       meta: {
-  //         title: '公安',
-  //         icon: 'publicSecurity'
-  //       }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/disabled-association',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: '残联',
-  //       component: () => import('@/views/disabled-association/index'),
-  //       meta: {
-  //         title: '残联',
-  //         icon: 'disabledPerson'
-  //       }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/search',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: '检索查询',
-  //       component: () => import('@/views/search/index'),
-  //       meta: {
-  //         title: '检索查询',
-  //         icon: 'search'
-  //       }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/statistical-analysis',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: '统计分析',
-  //       component: () => import('@/views/statistical-analysis/index'),
-  //       meta: {
-  //         title: '统计分析',
-  //         icon: 'statistical'
-  //       }
-  //     }
-  //   ]
-  // }
 ]
 
 //动态路由表：权限
@@ -178,15 +93,6 @@ export const asyncRoutes = [
       icon: 'map'
     },
     children: [
-      // {
-      //   path: 'basic-map',
-      //   name: 'basicmap',
-      //   component: () => import('@/views/map/basic-map/basicmap'), // cesium-test
-      //   meta: {
-      //     title: '地图',
-      //     icon: 'el-icon-map-location'
-      //   }
-      // },
 			{
         path: 'online_map',
         name: 'onlineMap',
@@ -233,289 +139,268 @@ export const asyncRoutes = [
         }
       },
     ]
-    // children: [
-    //   {
-    //     path: 'person-house-map',
-    //     name: 'PersonHouseMap',
-    //     component: () => import('@/views/map/person-house/base-map'), // cesium-test
-    //     meta: {
-    //       title: '人房地图',
-    //       icon: 'map',
-    //       roles: ['Administrator']
-    //     }
-    //   },
-    //   {
-    //     path: 'monomerization_cesium',
-    //     name: 'rainPoint',
-    //     component: () => import('@/views/map/monomerization_cesium/index_rain'),
-    //     meta: {
-    //       title: '渍水点',
-    //       icon: 'map'
-    //     }
-    //   },
-    //   {
-    //     path: 'personnelDistribution',
-    //     name: 'personnelDistribution',
-    //     component: () => import('@/views/map/monomerization_cesium/index_old'),
-    //     meta: {
-    //       title: '特殊人群分布',
-    //       icon: 'map'
-    //     }
-    //   },
-    //   // {
-    //   //   path: 'extration_cesium',
-    //   //   name: '单色模型',
-    //   //   component: () => import('@/views/map/extration_cesium/index'),
-    //   //   meta: {
-    //   //     title: '单色模型',
-    //   //     icon: 'map'
-    //   //   }
-    //   // },
-    //   {
-    //     path: 'city-management',
-    //     name: '城市管理',
-    //     component: () => import('@/views/map/city-management/index'),
-    //     meta: {
-    //       title: '城市管理',
-    //       icon: 'city'
-    //     }
-    //   },
-    //   // {
-    //   //   path: 'public-service',
-    //   //   name: '公共服务',
-    //   //   component: () =>
-    //   //     import('@/views/map/monomerization_cesium/index_service'),
-    //   //   meta: {
-    //   //     title: '公共服务',
-    //   //     icon: 'public-service'
-    //   //   }
-    //   // },
-    //   {
-    //     path: 'economic-development',
-    //     name: '经济发展',
-    //     component: () => import('@/views/map/economic-development/index'),
-    //     meta: {
-    //       title: '经济发展',
-    //       icon: 'money'
-    //     }
-    //   },
-    //   {
-    //     path: 'party-building',
-    //     name: '基层党建',
-    //     component: () => import('@/views/map/monomerization_cesium/index_party'),
-    //     meta: {
-    //       title: '基层党建',
-    //       icon: 'party-building'
-    //     }
-    //   },
-    //   {
-    //     path: 'governance',
-    //     name: '综治维稳',
-    //     component: () => import('@/views/map/monomerization_cesium/index_governance'),
-    //     meta: {
-    //       title: '综治维稳',
-    //       icon: 'safety'
-    //     }
-		// 	}
-    // ]
   },
 
-  //人口信息
-  // {
-  //   path: '/population',
-  //   component: Layout,
-  //   redirect: '/population/manage-data',
-  //   name: '人口信息',
-  //   meta: {
-  //     title: '人口信息',
-  //     icon: 'population'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'inquery-data',
-  //       name: 'PersonHouseData',
-  //       component: () => import('@/views/population/inquery-data'),
+	{
+		path: '/standardPlaceName',
+		component: Layout,
+		meta:{
+			title: '标准地名',
+			icon: 'splacename',
+		},
+		children: [
+			{
+				path: 'placeName-management',
+				name: 'placeNameManagement',
+				component: () => import('@/views/standardPlaceName/placeName-management/placeNameManagement'),
+        meta: {
+          title: '地名管理',
+          icon: 'splacename'
+        }
+			},
+			// {
+			// 	path: '000',
+			// 	name: '000',
+			// 	component: () => import('@/views/standardPlaceName/placeName-management/000'),
+      //   meta: {
+      //     title: '地名导航',
+      //     icon: 'splacename'
+      //   }
+			// },
+			// {
+			// 	path: 'placeName-management',
+			// 	name: '000',
+			// 	component: () => import('@/views/standardPlaceName/placeName-management/000'),
+      //   meta: {
+      //     title: '地名删除',
+      //     icon: 'splacename'
+      //   }
+			// },
+			// {
+			// 	path: 'placeName-management',
+			// 	name: '000',
+			// 	component: () => import('@/views/standardPlaceName/placeName-management/000'),
+      //   meta: {
+      //     title: '地名数据同步',
+      //     icon: 'splacename'
+      //   }
+			// },
+			// {
+			// 	path: 'placeName-management',
+			// 	name: '000',
+			// 	component: () => import('@/views/standardPlaceName/placeName-management/000'),
+      //   meta: {
+      //     title: '地名数据上报',
+      //     icon: 'splacename'
+      //   }
+			// },
+			// {
+			// 	path: 'placeName-management',
+			// 	name: '000',
+			// 	component: () => import('@/views/standardPlaceName/placeName-management/000'),
+      //   meta: {
+      //     title: '地名注记与符号配置',
+      //     icon: 'splacename'
+      //   }
+			// },
+			// {
+			// 	path: 'placeName-management',
+			// 	name: '000',
+			// 	component: () => import('@/views/standardPlaceName/placeName-management/000'),
+      //   meta: {
+      //     title: '地名统计',
+      //     icon: 'splacename'
+      //   }
+			// }
+		]
+	},
+
+	// {
+	// 	path: '/placeSign',
+	// 	component: Layout,
+	// 	meta:{
+	// 		title: '地名标志',
+	// 		icon: 'placeSign',
+	// 	},
+	// 	children: [
+	// 		{
+	// 			path: 'placeSign-management',
+	// 			name: 'placeSignManagement',
+	// 			component: () => import('@/views/placeSign/placeSign-management/placeSignManagement'),
   //       meta: {
-  //         title: '数据查询',
-  //         icon: 'dataManager'
-  //       }
-  //     },
-  //     // {
-  //     //   path: 'manage-grid',
-  //     //   name: '网格管理',
-  //     //   component: () => import('@/views/population/manage-grid'),
-  //     //   meta: {
-  //     //     title: '网格管理',
-  //     //     icon: 'grid'
-  //     //   }
-  //     // },
-  //     {
-  //       path: 'manage-personHouse',
-  //       name: 'manage-personHouse',
-  //       component: () => import('@/views/population/manage-personHouse'),
-  //       meta: {
-  //         title: '人房数据管理',
-  //         icon: 'dataManager'
+  //         title: '地名标志管理',
+  //         icon: 'placeSign'
   //       }
 	// 		},
-  //     {
-  //       path: 'statistical-population',
-  //       name: 'PersonStatistics',
-  //       component: () => import('@/views/population/statistical-population'),
+	// 		{
+	// 			path: 'placeSign-management',
+	// 			name: 'placeSignManagement',
+	// 			component: () => import('@/views/placeSign/placeSign-management/placeSignManagement'),
   //       meta: {
-  //         title: '统计分析',
-  //         icon: 'search'
+  //         title: '地名标志删除',
+  //         icon: 'placeSign'
   //       }
 	// 		},
-			
-  //   ]
+	// 		{
+	// 			path: 'placeSign-management',
+	// 			name: 'placeSignManagement',
+	// 			component: () => import('@/views/placeSign/placeSign-management/placeSignManagement'),
+  //       meta: {
+  //         title: '地名标志数据同步',
+  //         icon: 'placeSign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'placeSign-management',
+	// 			name: 'placeSignManagement',
+	// 			component: () => import('@/views/placeSign/placeSign-management/placeSignManagement'),
+  //       meta: {
+  //         title: '地名标志数据上报',
+  //         icon: 'placeSign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'placeSign-management',
+	// 			name: 'placeSignManagement',
+	// 			component: () => import('@/views/placeSign/placeSign-management/placeSignManagement'),
+  //       meta: {
+  //         title: '地名标志符号化管理',
+  //         icon: 'placeSign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'placeSign-management',
+	// 			name: 'placeSignManagement',
+	// 			component: () => import('@/views/placeSign/placeSign-management/placeSignManagement'),
+  //       meta: {
+  //         title: '地名标志统计',
+  //         icon: 'placeSign'
+  //       }
+	// 		}
+	// 	]
 	// },
 
-  // //公共服务
-  // {
-  //   path: '/public-Service',
-  //   component: Layout,
-  //   name: '公共服务',
-  //   meta: {
-  //         title: '公共服务',
-  //         icon: 'public-service'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'inquery-SpecialGroups',
-  //       name: 'SpecialGroups',
-  //       component: () => import('@/views/public-Service/inquery-SpecialGroups'),
-  //       meta: {
-  //         title: '特殊人群',
-  //         icon: 'peoples'
-  //       }
-  //     },
-  //     {
-  //       path: 'inquery-Poorpeoples',
-  //       name: 'Poorpeoples',
-  //       component: () => import('@/views/public-Service/inquery-Poorpeoples'),
-  //       meta: {
-  //         title: '低保人群',
-  //         icon: 'grid'
-  //       }
-  //     },
-  //     {
-  //       path: 'inquery-Disability',
-  //       name: 'Disability',
-  //       component: () => import('@/views/public-Service/inquery-Disability'),
-  //       meta: {
-  //         title: '残疾人群',
-  //         icon: 'disabledPerson'
-  //       }
-	// 		},
-  //     {
-  //       path: 'inquery-Militaryservice',
-  //       name: 'Militaryservice',
-  //       component: () => import('@/views/public-Service/inquery-Militaryservice'),
-  //       meta: {
-  //         title: '退伍人群',
-  //         icon: 'nested'
-  //       }
-	// 		},
-			
-  //   ]
-	// },
-  // //楼宇企业
 	// {
-  //   path: '/buildingCompany',
+	// 	path: '/boundary',
 	// 	component: Layout,
-	// 	redirect: '/buildingCompany/company',
-	// 	name: '楼宇经济',
-  //   meta: { 
-	// 		title: '楼宇经济',
-  //     icon: 'population'
-	//   },
-  //   children: [
-  //     {
-	// 			path: 'company',
-	// 			name: 'CompanyInfo',
-	// 			component: () => import('@/views/buildingEconomy/buildingEcoTable/company'),
-	// 			meta: {
-	// 				title: '公司信息查询',
-	// 				icon: 'table' 
-	// 			}
-	// 		},
-  //     {
-	// 			path: 'buildingEco',
-	// 			name: 'buildingEcoMap',
-	// 			component: () => import('@/views/buildingEconomy/buildingEcoMap/buildingEcoMap.vue'),
-	// 			meta: {
-	// 				title: '楼宇地图',
-	// 				icon: 'map'
-	// 			}
-	// 		},
-  //     {
-	// 			path: 'inquery-buildingEco',
-	// 			name: 'IqueryBuildingEco',
-	// 			component: () => import('@/views/buildingEconomy/inqueryBuilding/inquery-buildingEco.vue'),
-	// 			meta: {
-	// 				title: '楼宇统计分析',
-	// 				icon: 'search'
-	// 			}
-  //     },
-	// 		// {
-	// 		// 	path: 'buildingInfoTable',
-	// 		// 	name: 'buildingInfoTable',
-	// 		// 	component: () => import('@/views/buildingEconomy/buildingInfoTable'),
-	// 		// 	meta: {
-	// 		// 		title: '商业体信息表',
-	// 		// 		icon: 'table' 
-	// 		// 	}
-	// 		// },
-	// 		// {
-	// 		// 	path: 'buildingEcoTable',
-	// 		// 	name: 'buildingEcoTable',
-	// 		// 	component: () => import('@/views/buildingEconomy/buildingEcoTable/buildingEcoTable'),
-	// 		// 	meta: {
-	// 		// 		title: '公司信息管理',
-	// 		// 		icon: 'dataManager' 
-	// 		// 	}
-	// 		// },
-	// 		// {
-	// 		// 	path: 'companyTax',
-	// 		// 	name: 'companyTax',
-	// 		// 	component: () => import('@/views/buildingEconomy/buildingEcoTable/companyTax'),
-	// 		// 	meta: {
-	// 		// 		title: '公司纳税信息',
-	// 		// 		icon: 'dataManager' 
-	// 		// 	}
-	// 		// },		
-	// 		// {
-	// 		// 	path: 'inqueryBuildingTax',
-	// 		// 	name: 'inqueryBuildingTax',
-	// 		// 	component: () => import('@/views/buildingEconomy/inqueryCompanyTax/inquery-companyTax.vue'),
-	// 		// 	meta: {
-	// 		// 		title: '公司税收统计分析',
-	// 		// 		icon: 'search'
-	// 		// 	}
-	// 		// }
-  //   ]
-	// },
-	// {
-  //   path: '/house',
-  //   component: Layout,
-	// 	redirect:'/house/manage-house',
-  //   name: 'House',
-	// 	meta: {
-	// 		roles: ['Administrator']
+	// 	meta:{
+	// 		title: '边界线',
+	// 		icon: 'boundary',
 	// 	},
-  //   children: [
-  //     {
-  //       path: 'manage-house',
-  //       name: 'manage-house',
-  //       component: () => import('@/views/house/manage-house'),
+	// 	children: [
+	// 		{
+	// 			path: 'boundary-management',
+	// 			name: 'boundaryManagement',
+	// 			component: () => import('@/views/boundary/boundary-management/boundaryManagement'),
   //       meta: {
-  //         title: '房屋管理',
-  //         icon: 'house'
+  //         title: '行政界线管理',
+  //         icon: 'boundary'
   //       }
-  //     }
-  //   ]
-  // },
+	// 		},
+	// 		{
+	// 			path: 'boundary-management',
+	// 			name: 'boundaryManagement',
+	// 			component: () => import('@/views/boundary/boundary-management/boundaryManagement'),
+  //       meta: {
+  //         title: '村级管理线管理',
+  //         icon: 'boundary'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundary-management',
+	// 			name: 'boundaryManagement',
+	// 			component: () => import('@/views/boundary/boundary-management/boundaryManagement'),
+  //       meta: {
+  //         title: '界线注销',
+  //         icon: 'boundary'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundary-management',
+	// 			name: 'boundaryManagement',
+	// 			component: () => import('@/views/boundary/boundary-management/boundaryManagement'),
+  //       meta: {
+  //         title: '界线符号配置管理',
+  //         icon: 'boundary'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundary-management',
+	// 			name: 'boundaryManagement',
+	// 			component: () => import('@/views/boundary/boundary-management/boundaryManagement'),
+  //       meta: {
+  //         title: '边界线统计',
+  //         icon: 'boundary'
+  //       }
+	// 		}
+	// 	]
+	// },
+
+	// {
+	// 	path: '/boundarySign',
+	// 	component: Layout,
+	// 	meta:{
+	// 		title: '界线标志物',
+	// 		icon: 'boundarySign',
+	// 	},
+	// 	children: [
+	// 		{
+	// 			path: 'boundarySign-management',
+	// 			name: 'boundarySignManagement',
+	// 			component: () => import('@/views/boundarySign/boundarySign-management/boundarySignManagement'),
+  //       meta: {
+  //         title: '边界点、三交点、界桩点管理',
+  //         icon: 'boundarySign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundarySign-management',
+	// 			name: 'boundarySignManagement',
+	// 			component: () => import('@/views/boundarySign/boundarySign-management/boundarySignManagement'),
+  //       meta: {
+  //         title: '边界点、三交点、界桩点导航',
+  //         icon: 'boundarySign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundarySign-management',
+	// 			name: 'boundarySignManagement',
+	// 			component: () => import('@/views/boundarySign/boundarySign-management/boundarySignManagement'),
+  //       meta: {
+  //         title: '边界点、三交点、界桩点注销',
+  //         icon: 'boundarySign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundarySign-management',
+	// 			name: 'boundarySignManagement',
+	// 			component: () => import('@/views/boundarySign/boundarySign-management/boundarySignManagement'),
+  //       meta: {
+  //         title: '界桩符号配置管理',
+  //         icon: 'boundarySign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundarySign-management',
+	// 			name: 'boundarySignManagement',
+	// 			component: () => import('@/views/boundarySign/boundarySign-management/boundarySignManagement'),
+  //       meta: {
+  //         title: '告警参数配置',
+  //         icon: 'boundarySign'
+  //       }
+	// 		},
+	// 		{
+	// 			path: 'boundarySign-management',
+	// 			name: 'boundarySignManagement',
+	// 			component: () => import('@/views/boundarySign/boundarySign-management/boundarySignManagement'),
+  //       meta: {
+  //         title: '界线标志物统计',
+  //         icon: 'boundarySign'
+  //       }
+	// 		}
+	// 	]
+	// },
+
 	// {
   //   path: '/system',
   //   component: Layout,
@@ -532,28 +417,35 @@ export const asyncRoutes = [
 	// 			name: 'update-psd',
 	// 			component: () => import('@/views/system/update-psd'),
 	// 			meta: {
-	// 				title: '密码修改',
+	// 				title: '字典管理',
+	// 				icon: 'password',//没有roles，则不需权限，即所有用户均可访问
+	// 			}
+	// 		},
+	// 		{
+	// 			path: 'update-psd',
+	// 			name: 'update-psd',
+	// 			component: () => import('@/views/system/update-psd'),
+	// 			meta: {
+	// 				title: '角色管理',
 	// 				icon: 'password',//没有roles，则不需权限，即所有用户均可访问
 	// 			}
 	// 		},
   //     {
   //       path: 'assgin-permissions',
-  //       name: '自定义用户分配API',
+  //       name: 'assgin-permissions',
   //       component: () => import('@/views/system/assgin-permissions'),
   //       meta: {
-  //         title: '自定义用户分配API',
+  //         title: '权限管理',
   //         icon: 'permission',
-	// 				roles: ['Administrator']
   //       }
   //     },
   //     {
   //       path: 'create-user',
-  //       name: '用户管理',
+  //       name: 'create-user',
   //       component: () => import('@/views/system/create-user'),
   //       meta: {
   //         title: '用户管理',
   //         icon: 'user',
-	// 				roles: ['Administrator']
   //       }
   //     },
   //     {
@@ -564,6 +456,24 @@ export const asyncRoutes = [
   //         title: '密码重置',
   //         icon: 'password',
 	// 				roles: ['Administrator']
+  //       }
+  //     },
+	// 		{
+  //       path: 'create-user',
+  //       name: 'create-user',
+  //       component: () => import('@/views/system/create-user'),
+  //       meta: {
+  //         title: '日志管理',
+  //         icon: 'user',
+  //       }
+  //     },
+	// 		{
+  //       path: 'create-user',
+  //       name: 'create-user',
+  //       component: () => import('@/views/system/create-user'),
+  //       meta: {
+  //         title: '组织机构管理',
+  //         icon: 'user',
   //       }
   //     }
   //   ]

@@ -8,7 +8,7 @@
 
     <breadcrumb class="breadcrumb-container" />
 
-    <span class="title">智慧区划地名管理系统</span>
+    <span class="title">湖北·国家地名信息库</span>
 
     <div class="right-menu">
       <MessageTip class="message" />

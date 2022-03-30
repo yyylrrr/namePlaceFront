@@ -181,7 +181,7 @@ export default {
 							note:''
 						},
 						ttstatus: ["正常","锁定"],
-						tttype: ["社区","街道","网格员","自定义"],
+						tttype: ["省级","市级","区县","自定义"],
 			      confirm: '确认',
 						cancel: '取消',
 			      formLabelWidth: '100px',

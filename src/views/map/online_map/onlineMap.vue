@@ -46,8 +46,7 @@
 						<el-table
 						:data="searchList"
 						style="width: 100%"
-						@row-click="zoomtolayer"
-						@row-dblclick="searchResult">
+						@row-click="zoomtolayer">
 						<el-table-column
 						align="center"
 						type = "index"

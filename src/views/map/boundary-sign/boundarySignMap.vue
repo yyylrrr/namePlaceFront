@@ -88,7 +88,7 @@ export default {
 <style scoped lang="scss">
 #cesiumContainer {
 	width : 100%;
-	height: calc(100vh - 84px);
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;

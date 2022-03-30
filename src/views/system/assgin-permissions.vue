@@ -2,11 +2,11 @@
 	<div class="login_updatePassword passwordContainer">
 		<el-card>
 		  <el-form label-width="120px">
-			  <h3 class="title">自定义用户分配API</h3>
+			  <h3 class="title">权限与角色管理</h3>
 				<el-form-item label="用户名">
 						<el-input placeholder="请输入用户名"  v-model="ah"></el-input>
 				</el-form-item>
-				<el-form-item label="自定义分配API">
+				<el-form-item label="自定义分配权限">
 						<el-tree
 						:data="data"
 						show-checkbox
@@ -17,10 +17,10 @@
 						</el-tree>
 				</el-form-item>
 				
-				<el-form-item label="批量分配API">
-						<el-button size="mini" @click="netGrid">网格员</el-button>
-						<el-button size="mini" @click="community">社区</el-button>
-						<el-button size="mini" @click="street">街道</el-button>
+				<el-form-item label="批量分配权限">
+						<el-button size="mini" @click="netGrid">省级</el-button>
+						<el-button size="mini" @click="community">市级</el-button>
+						<el-button size="mini" @click="street">区县</el-button>
 				</el-form-item>
 
 				<div class="button-container"> 
