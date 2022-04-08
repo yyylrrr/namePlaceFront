@@ -8,11 +8,14 @@
 
     <breadcrumb class="breadcrumb-container" />
 
-    <span class="title">湖北·国家地名信息库</span>
+   	
+			<div class="bar"><span class="title">中国·湖北地名信息库</span></div>
+			<div class="bar"><span class="subtitle">湖北区划地名信息政务管理平台</span></div>
+			
 
     <div class="right-menu">
       <MessageTip class="message" />
-
+			
       <el-dropdown
         class="avatar-container"
         trigger="click"
@@ -83,11 +86,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bar{
+	width: 700px;
+}
 .navbar {
   height: 50px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #104E8B;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
   .hamburger-container {
@@ -112,6 +118,7 @@ export default {
     float: right;
     height: 100%;
     // line-height: 50px;
+		margin-top: -50px;
 
     &:focus {
       outline: none;
@@ -138,7 +145,6 @@ export default {
       margin-right: 20px;
       top: -13px;
     }
-
     .avatar-container {
       margin-right: 30px;
 
@@ -176,12 +182,23 @@ export default {
 
 <style scoped>
 .title {
-  position: absolute;
-  line-height: 50px;
+  line-height: 32px;
   margin-left: 100px;
-  font-size: 30px;
+  font-size: 25px;
   /* float: right; */
-  color: black;
+  color: #fff;
+  /* letter-spacing: 0;
+  text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777,
+    0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333,
+    0px 8px 7px #001135; */
+  font-family: "楷体", "楷体_GB2312";
+}
+.subtitle {
+  line-height: 10px;
+  margin-left: 120px;
+  font-size: 15px;
+  /* float: right; */
+  color: #fff;
   /* letter-spacing: 0;
   text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777,
     0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333,

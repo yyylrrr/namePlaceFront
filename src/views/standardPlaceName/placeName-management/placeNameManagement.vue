@@ -501,7 +501,7 @@
 							<el-row :gutter="10">
 							<el-col :span="3">
 								<div class="grid-content bg-purple">
-									<dt class="titleUnit">地理实体概况</dt>
+									<dt class="titleUnit">地名的含义</dt>
 								</div>
 							</el-col>
 							<el-col :span="9" class="border">
@@ -544,14 +544,14 @@
 			</el-col>
 		</el-row>
 		<el-row :gutter="4">
-			<el-col :span="4">
+			<el-col :span="8">
 				<div class="search-map">
 					<div id="cesiumContainer" ref="cesiumContainer" />
 				</div>
 			</el-col>
 		</el-row>
 		<el-row :gutter="4">
-			<el-col :span="4" :offset="4">
+			<el-col :span="8">
 				<div class="search-list">
 					<dt class="searchresult">搜索结果</dt>
 						<el-table
@@ -1008,9 +1008,12 @@
 					shouldAnimate: false, // 默认true ，否则为 false 。此选项优先于设置 Viewer＃clockViewModel 。
 					// ps. Viewer＃clockViewModel 是用于控制当前时间的时钟视图模型。我们这里用不到时钟，就把shouldAnimate设为false
 					infoBox: false, // 是否显示点击要素之后显示的信息
-					sceneMode: 3, // 初始场景模式 1 2D模式 2 2D循环模式 3 3D模式  Cesium.SceneMode
+					sceneMode: 1, // 初始场景模式 1 2D模式 2 2D循环模式 3 3D模式  Cesium.SceneMode
 					requestRenderMode: true, // 启用请求渲染模式，不需要渲染，节约资源吧
 					fullscreenElement: document.body, // 全屏时渲染的HTML元素 暂时没发现用处，虽然我关闭了全屏按钮，但是键盘按F11 浏览器也还是会进入全屏
+					imageryProvider: new Cesium.OpenStreetMapImageryProvider({  
+							url: 'https://a.tile.openstreetmap.org/'  
+							})  
 					// 高德影像地形地图
 					// imageryProvider: new Cesium.UrlTemplateImageryProvider({
 					//   url: "https://webst02.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}",
@@ -1033,8 +1036,8 @@
 				// );
 				// 设置初始位置  Cesium.Cartesian3.fromDegrees(longitude, latitude, height, ellipsoid, result)
 				const boundingSphere = new Cesium.BoundingSphere(
-					Cesium.Cartesian3.fromDegrees(114.30, 30.25, 400),
-					20000
+					Cesium.Cartesian3.fromDegrees(114.30, 30.60, 400),
+					160000
 				);
 				// 定位到初始位置
 				this.viewer.camera.flyToBoundingSphere(boundingSphere, {
@@ -1123,7 +1126,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .el-row {
     margin-bottom: 5px;
   }
@@ -1179,20 +1182,20 @@
   .search-map {
 		height: 60px;
 		margin-top: -680px;
-		height: 800px;
+		height: 400px;
    	/* background: #99a9bf; */
   }
 	#cesiumContainer {
 		width : 100%;
-		height: calc(83vh - 86px);
+		height: calc(45vh - 77px);
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
 	}
   .search-list {
 		height: 60px;
-		margin-top: -805px;
-		height: 800px;
+		margin-top: -280px;
+		height: 400px;
    	/* background: #99a9bf; */
   }
 	.searchresult {
@@ -1203,7 +1206,7 @@
 	}
 	.search-result-list{
 		width: 100%;
-		height: 783px;
+		height: 382px;
 	}
 	.proUnit {
 		height: 50px;
@@ -1222,13 +1225,10 @@
   .info-box {
 		height: 120px;
 		width: -200px;
-		margin-top: -130px;
+		margin-top: -125px;
    	/* background: #99a9bf; */
   }
-	.el-card__header {
-		height: 30px;
-	}
-	.el-card__body {
-		height: 80px;
+	.box-card {
+		height: 120px;
 	}
 </style>
